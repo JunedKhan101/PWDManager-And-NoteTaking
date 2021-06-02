@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    top: 50px;
+    width: 40%;
+}
+.subcontainer {
+    width: 40%;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+}
+.login-heading {
+    text-align: center;
+}

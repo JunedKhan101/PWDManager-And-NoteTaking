@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <%- include('../partials/cdn') %>
+    <link rel="stylesheet" href="../../css/signup.css">
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+  <div class="container">
+    <div class="subcontainer">
+      <h1 class="signup-heading">Sign up</h1> <br />
+      <form method="POST">
+        <div class="mb-3">
+            <label for="InputEmail" class="form-label">Email address:</label>
+            <input name="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+            <div id="emailHelp" name="email" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="input-username" class="form-label">Username:</label>
+          <input type="text" min="6" max="15" name="username" class="form-control" id="input-username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="InputPassword" class="form-label">Password:</label>
+            <input min="4" type="password" name="password" class="form-control" id="InputPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

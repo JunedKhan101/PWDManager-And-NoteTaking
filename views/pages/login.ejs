@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <%- include('../partials/cdn') %>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+  <div class="supcontainer">
+    <div class="subcontainer">
+      <h1 class="login-heading">Login</h1> <br />
+      <form method="POST">
+        <div class="mb-3">
+          <label for="input-username" class="form-label">Username:</label>
+          <input name="username" type="text" class="form-control" id="input-username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="InputPassword" class="form-label">Password:</label>
+            <input name="password" type="password" class="form-control" id="InputPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

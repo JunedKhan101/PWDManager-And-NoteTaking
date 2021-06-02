@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/pwds.css">
+    <%- include('../partials/cdn') %>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+  <button class="btn btn-primary create-btn" onclick="showHide();">Create</button>
+  <div class="mycontainer" id="container">
+    <div class="subcontainer">
+      <form method="POST">
+        <div class="mb-3">
+          <label for="input-title" class="form-label">Password for:</label>
+          <input name="title" type="text" class="form-control" id="input-title">
+        </div>
+        <div class="mb-3">
+          <label for="input-body" class="form-label">Password:</label>
+          <textarea name="body" class="form-control" id="input-body" rows="5" style="resize: none;"></textarea>
+        </div>
+        <input class="btn btn-primary submit-btn" type="submit" name="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  <div class="card-root-container">
+  <div class="card-container">
+    <% if (pwdModels) { %>
+      <% for (let i = 0; i < pwdModels.length; i++) { %>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= pwdModels[i].title %></h5>
+              <p class="card-text"><%= pwdModels[i].body %></p>
+              <a href="/edit/<%= pwdModels[i].id %>" class="card-link">Edit</a>
+              <a href="/delete/<%= pwdModels[i].id %>" class="card-link">Delete</a>
+            </div>
+          </div>
+        <% } %>
+    <% } %> 
+  </div>
+</div>
+</body>
+<script>
+  function showHide() {
+    $("#container").toggle("fast");
+  }
+</script>
+</html>

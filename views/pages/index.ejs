@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <%- include('../partials/cdn') %>
+    <style>
+      h1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+</head>
+<body>
+  <% if (typeof(currentuser) === "undefined") { %> 
+  <h1>Welcome.</h1>
+  <% } else { %>
+    <h1>Hello, <%= currentuser.username %> </h1>
+  <% } %>
+  <%- include('../partials/navbar') %>
+</body>
+<script>
+  const logout = () => {
+    document.cookie = "jwt=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    location.reload();
+    return false;
+  }
+</script>
+</html>
