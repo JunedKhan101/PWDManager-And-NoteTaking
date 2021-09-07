@@ -13,11 +13,18 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
+      #link {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+      }
     </style>
 </head>
 <body>
   <% if (typeof(currentuser) === "undefined") { %> 
   <h1>Welcome.</h1>
+  <a id="link" href="/signup" class="btn btn-outline-dark btn-lg">Get Started</a>
   <% } else { %>
     <h1>Hello, <%= currentuser.username %> </h1>
   <% } %>
